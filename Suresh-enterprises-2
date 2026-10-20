@@ -1,1 +1,22 @@
+{
+  "name": "Suresh Enterprises",
+  "short_name": "SureshApp",
+  "start_url": "/Suresh-enterprises-2/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "description": "Suresh Enterprises Business and Motivation Web App",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
 
