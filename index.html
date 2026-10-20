@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suresh Enterprises - Motivation Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            width: 100%;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 16px;
+            color: #bdc3c7;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            padding: 30px 20px;
+            flex-grow: 1;
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        h2.section-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 26px;
+        }
+
+        /* Navigation Grid for 10 Pages */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .nav-box {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .nav-box:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #219653, #27ae60);
+        }
+
+        /* Cards Grid for Quotes/Images */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            padding: 10px 25px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-btn:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            font-size: 14px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Suresh Enterprises</h1>
+        <p>Tiruppur District - Global Motivation & Business Hub</p>
+    </header>
+
+    <div class="container">
+
+        <!-- HOME PAGE: APJ Abdul Kalam Motivation -->
+        <div id="page-home" class="page-section active">
+            <h2 class="section-title">Dr. APJ Abdul Kalam - Inspiration Hub</h2>
+            <p style="text-align: center; color: #555; margin-bottom: 25px;">Click any category box below to explore world-class business leaders' motivation pages.</p>
+            
+            <!-- Navigation to 10 Pages -->
+            <div class="nav-grid">
+                <div class="nav-box" onclick="showPage('page-kalam')">1. Dr. APJ Abdul Kalam</div>
+                <div class="nav-box" onclick="showPage('page-gates')">2. Bill Gates Quotes</div>
+                <div class="nav-box" onclick="showPage('page-bezos')">3. Jeff Bezos Wisdom</div>
+                <div class="nav-box" onclick="showPage('page-musk')">4. Elon Musk Vision</div>
+                <div class="nav-box" onclick="showPage('page-jobs')">5. Steve Jobs Mindset</div>
+                <div class="nav-box" onclick="showPage('page-buffett')">6. Warren Buffett Rules</div>
+                <div class="nav-box" onclick="showPage('page-tata')">7. Ratan Tata Values</div>
+                <div class="nav-box" onclick="showPage('page-ambani')">8. Mukesh Ambani Growth</div>
+                <div class="nav-box" onclick="showPage('page-zuckerberg')">9. Mark Zuckerberg Ideas</div>
+                <div class="nav-box" onclick="showPage('page-global')">10. Global Titans Hub</div>
+            </div>
+
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">Featured Kalam Inspirations</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&fit=crop&q=60" alt="Dream">
+                    <h3>Dream Big</h3>
+                    <p>"Dream is not that which you see while sleeping..."</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&auto=format&fit=crop&q=60" alt="Work">
+                    <h3>Hard Work</h3>
+                    <p>"Confidence and hard work is the best medicine..."</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop&q=60" alt="Success">
+                    <h3>Ignited Minds</h3>
+                    <p>"Let us sacrifice our today so that our children can have a better tomorrow."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: BILL GATES -->
+        <div id="page-gates" class="page-section">
+            <h2 class="section-title">Bill Gates - Business & Tech Motivation</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&auto=format&fit=crop&q=60" alt="Gates"><h3>Customer Focus</h3><p>"Your most unhappy customers are your greatest source of learning."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&auto=format&fit=crop&q=60" alt="Success"><h3>Patience</h3><p>"Success is a lousy teacher. It seduces smart people into thinking they can't lose."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=60" alt="Future"><h3>Looking Ahead</h3><p>"We always overestimate the change that will occur in the next two years..."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+        <!-- PAGE 3: JEFF BEZOS -->
+        <div id="page-bezos" class="page-section">
+            <h2 class="section-title">Jeff Bezos - E-Commerce & Innovation</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=500&auto=format&fit=crop&q=60" alt="Bezos"><h3>Customer Obsession</h3><p>"The most important single thing is to focus obsessively on the customer."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1556742049-0a67d553c2a5?w=500&auto=format&fit=crop&q=60" alt="Risk"><h3>Willingness to Fail</h3><p>"If you never want to be criticized, for goodness' sake don't do anything new."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+        <!-- PAGE 4: ELON MUSK -->
+        <div id="page-musk" class="page-section">
+            <h2 class="section-title">Elon Musk - Future & Engineering Vision</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1517976487502-181155986884?w=500&auto=format&fit=crop&q=60" alt="Musk"><h3>First Principles</h3><p>"Boil things down to their fundamental truths and reason up from there."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&auto=format&fit=crop&q=60" alt="Persistence"><h3>Never Give Up</h3><p>"When something is important enough, you do it even if the odds are not in your favor."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+        <!-- PAGE 5: STEVE JOBS -->
+        <div id="page-jobs" class="page-section">
+            <h2 class="section-title">Steve Jobs - Design & Simplicity</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop&q=60" alt="Jobs"><h3>Stay Hungry</h3><p>"Stay hungry. Stay foolish."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=60" alt="Innovation"><h3>Innovation Distinction</h3><p>"Innovation distinguishes between a leader and a follower."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+        <!-- PAGE 6: WARREN BUFFETT -->
+        <div id="page-buffett" class="page-section">
+            <h2 class="section-title">Warren Buffett - Investment & Wisdom</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=500&auto=format&fit=crop&q=60" alt="Buffett"><h3>Reputation</h3><p>"It takes 20 years to build a reputation and five minutes to ruin it."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&auto=format&fit=crop&q=60" alt="Risk"><h3>Risk Management</h3><p>"Never test the depth of river with both feet."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+        <!-- PAGE 7: RATAN TATA -->
+        <div id="page-tata" class="page-section">
+            <h2 class="section-title">Ratan Tata - Ethics & Leadership</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&auto=format&fit=crop&q=60" alt="Tata"><h3>Right Decisions</h3><p>"I don't believe in making right decisions. I make decisions and then make them right."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&auto=format&fit=crop&q=60" alt="Ethics"><h3>Core Values</h3><p>"Power and wealth are not two of my main stakes."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+        <!-- PAGE 8: MUKESH AMBANI -->
+        <div id="page-ambani" class="page-section">
+            <h2 class="section-title">Mukesh Ambani - Scale & Growth</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60" alt="Ambani"><h3>Optimism</h3><p>"I think our fundamental belief is that for us growth is a way of life..."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&auto=format&fit=crop&q=60" alt="Vision"><h3>Big Dreams</h3><p>"All of us also grow up making our own dreams. Miracles happen when you chase them."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+        <!-- PAGE 9: MARK ZUCKERBERG -->
+        <div id="page-zuckerberg" class="page-section">
+            <h2 class="section-title">Mark Zuckerberg - Connection & Action</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&auto=format&fit=crop&q=60" alt="Zuckerberg"><h3>Risk Taking</h3><p>"The biggest risk is not taking any risk... In a world that changing really quickly..."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500&auto=format&fit=crop&q=60" alt="Action"><h3>Move Fast</h3><p>"Move fast and break things. Unless you are breaking stuff, you are not moving fast enough."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+        <!-- PAGE 10: GLOBAL TITANS HUB -->
+        <div id="page-global" class="page-section">
+            <h2 class="section-title">Global Titans - Ultimate Success Mindset</h2>
+            <div class="cards-grid">
+                <div class="card"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=60" alt="Global"><h3>Leadership</h3><p>"Leadership is about making others better as a result of your presence."</p></div>
+                <div class="card"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&auto=format&fit=crop&q=60" alt="Teamwork"><h3>Execution</h3><p>"Vision without execution is just hallucination."</p></div>
+            </div>
+            <button class="back-btn" onclick="showPage('page-home')">Back to Home</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Suresh Enterprises. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show target page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
